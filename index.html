@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h2>♥ HeartCare</h2>
+    <nav>
+        <a href="/">Home</a>
+        <a href="#prediction">Prediction</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <div>
+        <h1>Heart Disease<br><span>Prediction System</span></h1>
+        <p>
+            Enter basic health information to estimate the risk
+            of heart disease using a machine learning model.
+        </p>
+    </div>
+
+    <div class="heart">♥</div>
+</section>
+
+<section id="prediction" class="container">
+
+    <div class="card">
+
+        <h2>Patient Information</h2>
+        <p class="small">Fill in the details below</p>
+
+        <form action="/predict" method="POST">
+
+            <div class="grid">
+
+                <div>
+                    <label>Age</label>
+                    <input type="number" name="age" required>
+                </div>
+
+                <div>
+                    <label>Sex</label>
+                    <select name="sex" required>
+                        <option value="">Select</option>
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Chest Pain Type</label>
+                    <select name="cp" required>
+                        <option value="">Select</option>
+                        <option value="0">Typical Angina</option>
+                        <option value="1">Atypical Angina</option>
+                        <option value="2">Non-anginal Pain</option>
+                        <option value="3">Asymptomatic</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Resting Blood Pressure</label>
+                    <input type="number" name="trestbps" required>
+                </div>
+
+                <div>
+                    <label>Cholesterol</label>
+                    <input type="number" name="chol" required>
+                </div>
+
+                <div>
+                    <label>Fasting Blood Sugar</label>
+                    <select name="fbs" required>
+                        <option value="0">Normal</option>
+                        <option value="1">High</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Resting ECG</label>
+                    <select name="restecg" required>
+                        <option value="0">Normal</option>
+                        <option value="1">ST-T Abnormality</option>
+                        <option value="2">LV Hypertrophy</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Maximum Heart Rate</label>
+                    <input type="number" name="thalach" required>
+                </div>
+
+                <div>
+                    <label>Exercise Induced Angina</label>
+                    <select name="exang" required>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>ST Depression</label>
+                    <input type="number" step="0.1" name="oldpeak" required>
+                </div>
+
+                <div>
+                    <label>Slope</label>
+                    <select name="slope" required>
+                        <option value="0">Upsloping</option>
+                        <option value="1">Flat</option>
+                        <option value="2">Downsloping</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label>Number of Major Vessels</label>
+                    <select name="ca" required>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <button type="submit">
+                Predict Risk
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<footer>
+    <p>HeartCare © 2026</p>
+    <p>For educational purposes only. Not a medical diagnosis.</p>
+</footer>
+
+</body>
+</html>
